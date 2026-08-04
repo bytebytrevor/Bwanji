@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--brand-paper);
+  --color-foreground: var(--brand-ink);
+  
+  --color-primary: var(--brand-primary);
+  --color-primary-foreground: var(--brand-paper);
+  
+  --color-accent: var(--brand-accent);
+  --color-accent-foreground: var(--brand-primary);
+  
+  --color-muted: var(--neutral-100);
+  --color-muted-foreground: var(--neutral-700);
+
+  --color-border: var(--brand-divider);
+  --color-input: var(--neutral-200);
+  --color-ring: var(--brand-primary);
+
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+:root {
+  /* Brand colours — black / white / hot pink */
+  --brand-primary: #000000;    /* pure black — anchors, dark backgrounds, body text */
+  --brand-accent: #E50069;     /* hot pink — primary brand pop, CTAs, highlights */
+  --brand-ink: #000000;        /* black */
+  --brand-paper: #ffffff;      /* white — light backgrounds */
+  --brand-divider: #ececec;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #ececec;
+  --neutral-300: #c9c9c9;
+  --neutral-700: #4a4a4a;
+  --success-500: #2E8B57;
+  --error-500: #B43333;
+
+  /* Motion easing tokens */
+  --ease-standard:      cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-soft:      cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out-snap:      cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-quick:      cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out-strong: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Durations */
+  --dur-instant:    80ms;
+  --dur-micro:     150ms;
+  --dur-short:     250ms;
+  --dur-medium:    400ms;
+  --dur-long:      600ms;
+  --dur-extended:  900ms;
+
+  /* Stagger */
+  --stagger-default:  80ms;
+  --stagger-headline: 90ms;
+  --stagger-logo:    60ms;
+
+  /* Typography — Poppins for entire brand system */
+  --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-micro: 80ms; --dur-short: 150ms; --dur-medium: 200ms;
+    --dur-long: 250ms; --dur-extended: 300ms;
+  }
+}
+
+.dark {
+  /* Maps to light mode — editorial design uses an explicit dark brand background */
+  --brand-primary: #000000;
+  --brand-accent: #E50069;
+  --brand-ink: #000000;
+  --brand-paper: #ffffff;
+  --brand-divider: #ececec;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #ececec;
+  --neutral-300: #c9c9c9;
+  --neutral-700: #4a4a4a;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@keyframes marquee { 
+  from { transform: translateX(0) } 
+  to { transform: translateX(-50%) } 
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-fab {
+  animation: pulse-whatsapp 2s infinite;
+}
+
+/* ============================================================
+   Editorial motion primitives
+   Inspired by Brandon Archibald & Dorsten Lesser
+   ============================================================ */
+
+/* --- Pink glow CTA (scale + drop-shadow on hover) --- */
+.btn-glow-pink {
+  position: relative;
+  transition: transform 320ms var(--ease-out-snap), box-shadow 320ms var(--ease-out-snap), background-color 220ms ease;
+  will-change: transform, box-shadow;
+}
+.btn-glow-pink:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow:
+    0 8px 24px rgba(229, 0, 105, 0.35),
+    0 0 48px rgba(229, 0, 105, 0.45);
+}
+.btn-glow-pink:active {
+  transform: translateY(0) scale(1.0);
+}
+
+/* --- Outline button glow (white-on-dark contexts) --- */
+.btn-glow-outline {
+  transition: transform 320ms var(--ease-out-snap), border-color 220ms ease, color 220ms ease, background-color 220ms ease;
+  will-change: transform;
+}
+.btn-glow-outline:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: #E50069;
+  color: #E50069;
+}
+
+/* --- Outline button lift only (use on coloured backgrounds where a
+       pink colour-shift would clash, e.g. a button on the pink CTA strip) --- */
+.btn-lift {
+  transition: transform 320ms var(--ease-out-snap), background-color 220ms ease;
+  will-change: transform;
+}
+.btn-lift:hover {
+  transform: translateY(-2px) scale(1.03);
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* --- Card lift (scale + slight rotate + soft shadow) --- */
+.card-lift {
+  transition: transform 480ms var(--ease-out-snap), box-shadow 480ms var(--ease-out-snap), border-color 320ms ease;
+  will-change: transform, box-shadow;
+}
+.card-lift:hover {
+  transform: translateY(-6px) scale(1.015) rotate(-0.4deg);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(229, 0, 105, 0.12);
+}
+
+/* --- Arrow nudge (paired with parent .group on hover) --- */
+.arrow-nudge {
+  display: inline-block;
+  transition: transform 320ms var(--ease-out-snap);
+}
+.group:hover .arrow-nudge {
+  transform: translateX(6px) rotate(-8deg);
+}
+
+/* --- Logo subtle pulse on hover --- */
+.logo-pulse {
+  transition: transform 320ms var(--ease-out-soft), filter 320ms ease;
+}
+.logo-pulse:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 12px rgba(229, 0, 105, 0.45));
+}
+
+/* --- Dot pulse (for "Available" status pill etc.) --- */
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+.dot-pulse {
+  animation: dot-pulse 1.8s ease-in-out infinite;
+}
+
+/* --- Soft float loop (for badges, scroll cues) --- */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-y {
+  animation: float-y 4s ease-in-out infinite;
+}
+
+/* --- Reduced motion respect --- */
+@media (prefers-reduced-motion: reduce) {
+  .btn-glow-pink:hover,
+  .btn-glow-outline:hover,
+  .btn-lift:hover,
+  .card-lift:hover,
+  .logo-pulse:hover {
+    transform: none;
+  }
+  .float-y,
+  .dot-pulse,
+  .whatsapp-fab,
+  .animate-marquee {
+    animation: none !important;
+  }
+}
