@@ -29,7 +29,7 @@ export default function App() {
               <Route path="/what-we-do/public-relations/" element={<PublicRelationsPage />} />
               <Route path="/what-we-do/brand-strategy/" element={<BrandStrategyPage />} />
               <Route path="/what-we-do/creative-and-content/" element={<CreativeContentPage />} />
-              <Route path="/what-we-do/digital-and-perfomance/" element={<DigitalPerformancePage />} />
+              <Route path="/what-we-do/digital-and-performance/" element={<DigitalPerformancePage />} />
               <Route path="/what-we-do/activation/" element={<ActivationExperientialPage />} />
               <Route path="/what-we-do/advisory/" element={<AdvisoryPage />} />
               <Route path="/work/:slug" element={<CaseStudyDetailPage />} />
