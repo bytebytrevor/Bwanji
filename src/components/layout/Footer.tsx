@@ -52,13 +52,13 @@ export default function Footer() {
             <div className="flex flex-col gap-6 text-sm text-neutral-300">
               <div className="flex flex-col gap-1">
                 <p className="font-medium text-[#ffffff]">Lusaka, Zambia</p>
-                <a href="mailto:hello@bwanjiagency.com" className="hover:text-[var(--brand-accent)] transition-colors">hello@bwanjiagency.com</a>
-                <p>WhatsApp: +260 XXX XXX XXX</p>
+                <a href="mailto:info@bwanji.co.zm" className="hover:text-[var(--brand-accent)] transition-colors">info@bwanji.co.zm</a>
+                <p>WhatsApp: +260 763 628 686</p>
               </div>
               <div className="flex flex-col gap-1">
                 <p className="font-medium text-[#ffffff]">Lilongwe, Malawi</p>
-                <a href="mailto:malawi@bwanjiagency.com" className="hover:text-[var(--brand-accent)] transition-colors">malawi@bwanjiagency.com</a>
-                <p>WhatsApp: +265 XXX XXX XXX</p>
+                <a href="mailto:info@bwanji.co.mw" className="hover:text-[var(--brand-accent)] transition-colors">info@bwanji.co.mw</a>
+                <p>WhatsApp: +265 884 641 569</p>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-400">
-          <p>© 2025 Bwanji Agency. All rights reserved.</p>
+          <p>© 2026 Bwanji Agency. All rights reserved.</p>
           <div className="flex gap-4">
             <Link to="/privacy/" className="hover:text-white transition-colors">Privacy</Link>
             <span>·</span>

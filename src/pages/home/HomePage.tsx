@@ -444,7 +444,7 @@ export default function HomePage() {
                 transition={{ delay: 0.2 }}
                 className="text-[#4A4A47] text-base leading-relaxed max-w-sm"
               >
-                Four kinds of clients, one common thread — they need work that lands here, not just work that looks good in a deck.
+                Four kinds of clients, one common thread: they need work that lands here, not just work that looks good in a deck.
               </motion.p>
             </div>
 
@@ -660,7 +660,7 @@ export default function HomePage() {
               transition={{ delay: 0.2 }}
               className="text-[#4A4A47] leading-relaxed"
             >
-              Six disciplines, one team — wired to land in Zambian and Malawian markets.
+              Six disciplines, one team. Wired to land in Zambian and Malawian markets.
             </motion.p>
           </div>
 
@@ -854,7 +854,7 @@ export default function HomePage() {
                   ["Procurement compliance (gov, INGO)", "full", "full", "empty"],
                   ["Pricing transparency for SMEs", "full", "empty", "full"],
                   ["Senior cover for crisis", "full", "full", "empty"],
-                  ["Mobile-money & m-commerce fluency", "full", "half", "half"],
+                  ["Mobile money & m-commerce fluency", "full", "half", "half"],
                   ["Network craft (TBWA / Magna Carta)", "full", "full", "empty"],
                   ["Cost efficiency vs offshore", "full", "empty", "full"]
                 ].map((row, i) => (
@@ -924,7 +924,7 @@ export default function HomePage() {
                 transition={{ delay: 0.2 }}
                 className="text-[#4A4A47] text-base leading-relaxed max-w-sm mb-8"
               >
-                Three partners. Three different briefs. One common thread — work that meets the ground.
+                Three partners. Three different briefs. One common thread: work that holds up on the ground.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -1129,7 +1129,7 @@ export default function HomePage() {
               Start a project <span className="arrow-nudge">&rarr;</span>
             </Link>
             <a 
-              href="https://wa.me/260000000000"
+              href="https://wa.me/260763628686"
               target="_blank"
               rel="noreferrer"
               className="btn-lift border-2 border-[#000000] text-[#000000] px-8 py-4 text-base font-medium flex items-center justify-center gap-2"

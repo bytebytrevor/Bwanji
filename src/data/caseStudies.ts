@@ -67,6 +67,163 @@ export type CaseStudy = {
 };
 
 export const caseStudies: CaseStudy[] = [
+{
+  "slug": "sisonke-community-heroes",
+  "client": "Old Mutual Africa",
+  "sector": "Financial Services",
+  "year": "2021",
+  "market": "Malawi & Zimbabwe",
+  "title": "#Sisonke: Recognising Africa's Community Heroes",
+  "summary": "A Pan-African campaign honouring the people who showed up for their communities during COVID-19, run by Magna Carta across Malawi and Zimbabwe.",
+  "duration": "May – August 2021",
+  "markets": "Malawi and Zimbabwe",
+  "challenge": [
+    "Old Mutual launched #Sisonke across Kenya, Malawi, South Africa and Zimbabwe to recognise community heroes during the COVID-19 pandemic."
+  ],
+  "results": [
+    {
+      "number": "71,627,293",
+      "label": "Total media reach",
+      "note": ""
+    },
+    {
+      "number": "47",
+      "label": "Competition announcement media hits",
+      "note": ""
+    },
+    {
+      "number": "28",
+      "label": "Winners announcement media hits",
+      "note": ""
+    }
+  ],
+  "heroImage": "/opengraph.jpg",
+  "languages": [],
+  "audience": "",
+  "objective": "",
+  "capabilities": [
+    "Public Relations"
+  ],
+  "challengeTitle": "The brief",
+  "insightTitle": "The approach",
+  "insightQuote": "",
+  "insightBody": "A digital campaign built around social media nominations, supported by print, online, radio, a Malawi media briefing and press conferences.",
+  "workTitle": "Approach",
+  "workIntro": "A digital campaign built around social media nominations, supported by print, online, radio, a Malawi media briefing and press conferences.",
+  "outputs": [],
+  "resultsTitle": "Results",
+  "team": []
+},
+{
+  "slug": "nditha-i-can",
+  "client": "PSI Malawi",
+  "sector": "Public Health",
+  "year": "",
+  "market": "Malawi & Zimbabwe",
+  "title": "Nditha: Proving Life Doesn't Stop",
+  "summary": "A behavioural change campaign showing people living with HIV what is possible when they stay on treatment, built around the message “I can.”",
+  "duration": "Campaign",
+  "markets": "Malawi and Zimbabwe",
+  "challenge": [
+    "PSI ran a behavioural change campaign showing what is possible when people living with HIV stay on treatment."
+  ],
+  "results": [
+    {
+      "number": "8,071,571",
+      "label": "Radio reach",
+      "note": ""
+    },
+    {
+      "number": "5,962,878",
+      "label": "TV reach",
+      "note": ""
+    },
+    {
+      "number": "1,641,991",
+      "label": "Facebook reach",
+      "note": ""
+    }
+  ],
+  "heroImage": "/opengraph.jpg",
+  "languages": [],
+  "audience": "",
+  "objective": "",
+  "capabilities": [
+    "Public Relations"
+  ],
+  "challengeTitle": "The brief",
+  "insightTitle": "The approach",
+  "insightQuote": "",
+  "insightBody": "Talk shows, community dialogues, roadshows, trusted traditional and religious leaders, community radio, radio drama, TV and digital channels.",
+  "workTitle": "Approach",
+  "workIntro": "Talk shows, community dialogues, roadshows, trusted traditional and religious leaders, community radio, radio drama, TV and digital channels.",
+  "outputs": [],
+  "resultsTitle": "Results",
+  "team": []
+},
+{
+  "slug": "fdh-ipo-crisis-management",
+  "client": "Old Mutual Malawi",
+  "sector": "Financial Services",
+  "year": "2020",
+  "market": "Malawi",
+  "title": "Turning an IPO Story Around",
+  "summary": "When a news story accused Old Mutual of corporate sabotage over an FDH Bank share deal, we built a journalist roundtable that replaced speculation with context.",
+  "duration": "July – August 2020",
+  "markets": "Malawi",
+  "challenge": [
+    "A Nyasa Times article about Old Mutual’s FDH Bank share acquisition triggered negative social commentary."
+  ],
+  "results": [],
+  "heroImage": "/opengraph.jpg",
+  "languages": [],
+  "audience": "",
+  "objective": "",
+  "capabilities": [
+    "Public Relations"
+  ],
+  "challengeTitle": "The brief",
+  "insightTitle": "The approach",
+  "insightQuote": "",
+  "insightBody": "A financial-services roundtable with Malawi Stock Exchange, Reserve Bank of Malawi and market intermediaries, alongside expert commentary and interviews.",
+  "workTitle": "Approach",
+  "workIntro": "A financial-services roundtable with Malawi Stock Exchange, Reserve Bank of Malawi and market intermediaries, alongside expert commentary and interviews.",
+  "outputs": [],
+  "resultsTitle": "Results",
+  "team": []
+},
+{
+  "slug": "tchoova-njinga-innovation-challenge",
+  "client": "DT Global (USAID)",
+  "sector": "Development & Aid",
+  "year": "2025",
+  "market": "Malawi & Zambia",
+  "title": "Two Markets, One Challenge",
+  "summary": "One campaign, two very different media landscapes. We built distinct channel and influencer strategies for Zambia and Malawi rather than running a single regional playbook.",
+  "duration": "2024–2025",
+  "markets": "Malawi and Zambia",
+  "challenge": [
+    "The Tchoova Njinga Innovation Challenge invited bicycle-related solutions for healthcare access and economic mobility."
+  ],
+  "results": [],
+  "heroImage": "/opengraph.jpg",
+  "languages": [],
+  "audience": "",
+  "objective": "",
+  "capabilities": [
+    "Public Relations"
+  ],
+  "challengeTitle": "The brief",
+  "insightTitle": "The approach",
+  "insightQuote": "",
+  "insightBody": "Tailored radio, print, TV and influencer plans for Zambia and Malawi, using trusted community leaders and WhatsApp networks where appropriate.",
+  "workTitle": "Approach",
+  "workIntro": "Tailored radio, print, TV and influencer plans for Zambia and Malawi, using trusted community leaders and WhatsApp networks where appropriate.",
+  "outputs": [],
+  "resultsTitle": "Results",
+  "team": []
+},
+
   {
     slug: "insurance-in-the-language-of-the-market",
     client: "Old Mutual Zambia",

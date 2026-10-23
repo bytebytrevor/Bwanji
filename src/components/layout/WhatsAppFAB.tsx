@@ -1,7 +1,7 @@
 export default function WhatsAppFAB() {
   return (
     <a
-      href="https://wa.me/260000000000"
+      href="https://wa.me/260763628686"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
