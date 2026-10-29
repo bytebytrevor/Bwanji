@@ -36,9 +36,9 @@ const fieldNotes = [
 ];
 
 export default function InsightsHubPage() {
-  const [activeCategory, setActiveCategory] = useState<
-    "All" | InsightCategory
-  >("All");
+  const [activeCategory, setActiveCategory] = useState<"All" | InsightCategory>(
+    "All",
+  );
 
   const categories = useMemo(
     () => [
@@ -165,7 +165,9 @@ export default function InsightsHubPage() {
                 <div className="flex flex-col justify-between p-7 text-white md:p-10 lg:col-span-5 lg:p-12">
                   <div>
                     <div className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
-                      <span>{formatInsightDate(featuredInsight.publishedAt)}</span>
+                      <span>
+                        {formatInsightDate(featuredInsight.publishedAt)}
+                      </span>
                       <span>{featuredInsight.readTime}</span>
                       <span className="inline-flex items-center gap-1.5">
                         <MapPin className="h-3.5 w-3.5 text-[#E50069]" />
@@ -243,9 +245,7 @@ export default function InsightsHubPage() {
               </p>
 
               <h2 className="font-serif text-[clamp(1.8rem,3.5vw,2.7rem)] text-black">
-                {activeCategory === "All"
-                  ? "All insights"
-                  : activeCategory}
+                {activeCategory === "All" ? "All insights" : activeCategory}
               </h2>
             </div>
 
@@ -457,9 +457,9 @@ export default function InsightsHubPage() {
 
               <p className="mb-8 max-w-2xl leading-relaxed text-[#4A4A47]">
                 A practical report for marketers working across Zambia and
-                Malawi, covering language, platform use, mobile behaviour,
-                trust signals, field realities, and what these patterns mean
-                for campaign planning.
+                Malawi, covering language, platform use, mobile behaviour, trust
+                signals, field realities, and what these patterns mean for
+                campaign planning.
               </p>
 
               <div className="mb-9 grid grid-cols-2 gap-5 border-y border-[#E5E2DA] py-6 sm:grid-cols-3">
@@ -503,8 +503,8 @@ export default function InsightsHubPage() {
             viewport={{ once: true }}
             className="font-serif text-[clamp(1.8rem,4vw,3.5rem)] leading-[1.15] text-black"
           >
-            We do not publish to sound certain. We publish to make the
-            questions sharper.
+            We do not publish to sound certain. We publish to make the questions
+            sharper.
           </motion.p>
         </div>
       </section>

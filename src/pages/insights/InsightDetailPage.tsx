@@ -14,11 +14,7 @@ import {
   UserRound,
 } from "lucide-react";
 
-import {
-  formatInsightDate,
-  getInsightBySlug,
-  insights,
-} from "@/data/insights";
+import { formatInsightDate, getInsightBySlug, insights } from "@/data/insights";
 
 export default function InsightDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -44,14 +40,12 @@ export default function InsightDetailPage() {
 
     const sameCategory = insights.filter(
       (item) =>
-        item.slug !== insight.slug &&
-        item.category === insight.category,
+        item.slug !== insight.slug && item.category === insight.category,
     );
 
     const otherCategories = insights.filter(
       (item) =>
-        item.slug !== insight.slug &&
-        item.category !== insight.category,
+        item.slug !== insight.slug && item.category !== insight.category,
     );
 
     return [...sameCategory, ...otherCategories].slice(0, 3);
@@ -68,14 +62,10 @@ export default function InsightDetailPage() {
       ? insight.introduction
       : [insight.excerpt];
 
-  const hasArticleContent =
-    insight.sections && insight.sections.length > 0;
+  const hasArticleContent = insight.sections && insight.sections.length > 0;
 
   return (
-    <article
-      className="min-h-screen bg-white"
-      data-insight={insight.slug}
-    >
+    <article className="min-h-screen bg-white" data-insight={insight.slug}>
       {/* Hero */}
       <header className="relative flex min-h-[720px] items-end overflow-hidden bg-black pb-16 pt-32 text-white md:pb-20">
         <img
@@ -205,9 +195,7 @@ export default function InsightDetailPage() {
                   </p>
                 </div>
 
-                <p className="text-sm font-semibold text-black">
-                  {item.value}
-                </p>
+                <p className="text-sm font-semibold text-black">{item.value}</p>
               </div>
             );
           })}
@@ -338,15 +326,11 @@ export default function InsightDetailPage() {
                     </h2>
 
                     <div className="max-w-3xl space-y-6 text-base leading-[1.85] text-[#4A4A47] md:text-lg">
-                      {section.paragraphs.map(
-                        (paragraph, paragraphIndex) => (
-                          <p
-                            key={`${section.id}-${paragraphIndex}`}
-                          >
-                            {paragraph}
-                          </p>
-                        ),
-                      )}
+                      {section.paragraphs.map((paragraph, paragraphIndex) => (
+                        <p key={`${section.id}-${paragraphIndex}`}>
+                          {paragraph}
+                        </p>
+                      ))}
                     </div>
 
                     {section.image && (
@@ -396,8 +380,8 @@ export default function InsightDetailPage() {
                 </h2>
 
                 <p className="max-w-2xl leading-relaxed text-[#4A4A47]">
-                  This insight currently contains its publication summary.
-                  Add its introduction and article sections in{" "}
+                  This insight currently contains its publication summary. Add
+                  its introduction and article sections in{" "}
                   <code className="bg-white px-1.5 py-1 text-sm text-black">
                     insights.ts
                   </code>{" "}
@@ -407,48 +391,45 @@ export default function InsightDetailPage() {
             )}
 
             {/* Takeaways */}
-            {insight.keyTakeaways &&
-              insight.keyTakeaways.length > 0 && (
-                <motion.section
-                  initial={{
-                    opacity: 0,
-                    y: 28,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                  }}
-                  className="mt-20 bg-[#E50069] p-8 text-black md:mt-28 md:p-12"
-                >
-                  <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/50">
-                    Practical summary
-                  </p>
+            {insight.keyTakeaways && insight.keyTakeaways.length > 0 && (
+              <motion.section
+                initial={{
+                  opacity: 0,
+                  y: 28,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                className="mt-20 bg-[#E50069] p-8 text-black md:mt-28 md:p-12"
+              >
+                <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/50">
+                  Practical summary
+                </p>
 
-                  <h2 className="mb-8 font-serif text-[clamp(1.8rem,3.5vw,2.7rem)]">
-                    What to take into the next brief
-                  </h2>
+                <h2 className="mb-8 font-serif text-[clamp(1.8rem,3.5vw,2.7rem)]">
+                  What to take into the next brief
+                </h2>
 
-                  <ul className="grid grid-cols-1 gap-4">
-                    {insight.keyTakeaways.map((takeaway) => (
-                      <li
-                        key={takeaway}
-                        className="flex gap-4 border-t border-black/20 pt-4"
-                      >
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black text-white">
-                          <Check className="h-3.5 w-3.5" />
-                        </span>
+                <ul className="grid grid-cols-1 gap-4">
+                  {insight.keyTakeaways.map((takeaway) => (
+                    <li
+                      key={takeaway}
+                      className="flex gap-4 border-t border-black/20 pt-4"
+                    >
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black text-white">
+                        <Check className="h-3.5 w-3.5" />
+                      </span>
 
-                        <p className="font-medium leading-relaxed">
-                          {takeaway}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.section>
-              )}
+                      <p className="font-medium leading-relaxed">{takeaway}</p>
+                    </li>
+                  ))}
+                </ul>
+              </motion.section>
+            )}
 
             {/* Sources */}
             {insight.sources && insight.sources.length > 0 && (
@@ -502,9 +483,7 @@ export default function InsightDetailPage() {
                     <p className="text-xs uppercase tracking-[0.16em] text-[#4A4A47]">
                       Written by
                     </p>
-                    <p className="font-semibold text-black">
-                      {insight.author}
-                    </p>
+                    <p className="font-semibold text-black">{insight.author}</p>
                     <p className="text-sm text-[#4A4A47]">
                       {insight.authorRole}
                     </p>
@@ -549,73 +528,69 @@ export default function InsightDetailPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {relatedInsights.map(
-                (relatedInsight, index) => (
-                  <motion.article
-                    key={relatedInsight.slug}
-                    initial={{
-                      opacity: 0,
-                      y: 24,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    transition={{
-                      delay: index * 0.08,
-                    }}
+              {relatedInsights.map((relatedInsight, index) => (
+                <motion.article
+                  key={relatedInsight.slug}
+                  initial={{
+                    opacity: 0,
+                    y: 24,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
+                  transition={{
+                    delay: index * 0.08,
+                  }}
+                >
+                  <Link
+                    to={`/insights/${relatedInsight.slug}/`}
+                    className="group flex h-full flex-col"
                   >
-                    <Link
-                      to={`/insights/${relatedInsight.slug}/`}
-                      className="group flex h-full flex-col"
-                    >
-                      <div className="relative mb-6 aspect-[4/3] overflow-hidden bg-white">
-                        <img
-                          src={relatedInsight.image}
-                          alt=""
-                          aria-hidden="true"
-                          loading="lazy"
-                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
+                    <div className="relative mb-6 aspect-[4/3] overflow-hidden bg-white">
+                      <img
+                        src={relatedInsight.image}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
 
-                        <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/20" />
+                      <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/20" />
 
-                        <span className="absolute left-4 top-4 bg-[#E50069] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.17em] text-black">
-                          {relatedInsight.category}
+                      <span className="absolute left-4 top-4 bg-[#E50069] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.17em] text-black">
+                        {relatedInsight.category}
+                      </span>
+                    </div>
+
+                    <div className="flex flex-1 flex-col">
+                      <div className="mb-4 flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#4A4A47]">
+                        <span>
+                          {formatInsightDate(relatedInsight.publishedAt)}
                         </span>
+                        <span>·</span>
+                        <span>{relatedInsight.readTime}</span>
                       </div>
 
-                      <div className="flex flex-1 flex-col">
-                        <div className="mb-4 flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#4A4A47]">
-                          <span>
-                            {formatInsightDate(
-                              relatedInsight.publishedAt,
-                            )}
-                          </span>
-                          <span>·</span>
-                          <span>{relatedInsight.readTime}</span>
-                        </div>
+                      <h3 className="mb-4 font-serif text-2xl leading-tight text-black transition-colors group-hover:text-[#E50069]">
+                        {relatedInsight.title}
+                      </h3>
 
-                        <h3 className="mb-4 font-serif text-2xl leading-tight text-black transition-colors group-hover:text-[#E50069]">
-                          {relatedInsight.title}
-                        </h3>
+                      <p className="mb-6 text-sm leading-relaxed text-[#4A4A47]">
+                        {relatedInsight.excerpt}
+                      </p>
 
-                        <p className="mb-6 text-sm leading-relaxed text-[#4A4A47]">
-                          {relatedInsight.excerpt}
-                        </p>
-
-                        <span className="mt-auto inline-flex items-center gap-2 border-t border-[#E5E2DA] pt-5 text-sm font-semibold text-black">
-                          Read insight
-                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </span>
-                      </div>
-                    </Link>
-                  </motion.article>
-                ),
-              )}
+                      <span className="mt-auto inline-flex items-center gap-2 border-t border-[#E5E2DA] pt-5 text-sm font-semibold text-black">
+                        Read insight
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.article>
+              ))}
             </div>
           </div>
         </section>
