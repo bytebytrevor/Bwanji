@@ -20,12 +20,14 @@ import InsightDetailPage from "./pages/insights/InsightDetailPage";
 import NetworkPage from "./pages/about/NetworkPage";
 import ESGPage from "./pages/about/ESGPage";
 import CareersPage from "./pages/about/CareersPage";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function App() {
   return (
     <HelmetProvider>
       <MotionConfig reducedMotion="user">
         <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <ScrollToTop />
           <Routes>
             <Route element={<PageLayout />}>
               <Route path="/" element={<HomePage />} />
