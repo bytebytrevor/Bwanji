@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import { useRef, type CSSProperties, type MouseEvent } from "react";
 
+import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
+
 import Parallax from "@/motion/Parallax";
 import WordReveal from "@/motion/WordReveal";
 import AnimatedIcon, { type IconMotionVariant } from "@/motion/AnimatedIcon";
@@ -292,43 +294,6 @@ function SectorCard({ item, index }: { item: SectorItem; index: number }) {
   );
 }
 
-/* =========================================================
-   TESTIMONIAL DATA
-========================================================= */
-
-const testimonials = [
-  {
-    quote:
-      "Bwanji didn't just deliver a campaign — they told us what was actually happening in the market. The Bemba-language ads tested at three times the recall of our English versions. We should have done this five years ago.",
-    name: "Chilufya Mwamba",
-    role: "CMO, Old Mutual Zambia",
-    location: "Lusaka, Zambia",
-    statNumber: "34%",
-    statLabel: "Quote completions",
-    link: "/work/insurance-in-the-language-of-the-market/",
-  },
-  {
-    quote:
-      "We've worked with comms agencies across sub-Saharan Africa. Bwanji is the only one that came back to us with community-level data before we'd even briefed a creative. That's not standard practice — that's ground truth.",
-    name: "Dr. Thandiwe Phiri",
-    role: "Country Director, PSI Malawi",
-    location: "Lilongwe, Malawi",
-    statNumber: "210K",
-    statLabel: "Households reached",
-    link: "/work/behaviour-change-at-last-mile/",
-  },
-  {
-    quote:
-      "The crisis hit on a Thursday evening. By Friday morning, Bwanji had a holding statement, a stakeholder map, and a media monitoring briefing on my desk. The response was surgical, and the coverage reflected that.",
-    name: "James Banda",
-    role: "Head of Corporate Affairs, ZICB",
-    location: "Lusaka, Zambia",
-    statNumber: "72h",
-    statLabel: "Recovery time",
-    link: "/work/",
-  },
-];
-
 const featuredCaseStudies = caseStudies.slice(0, 3);
 
 /* =========================================================
@@ -567,8 +532,6 @@ export default function HomePage() {
                   "PSI",
                   "Airtel Zambia",
                   "FNB Malawi",
-                  "MTN Zambia",
-                  "ZANACO",
                 ].map((client) => (
                   <span
                     key={client}
@@ -1050,167 +1013,7 @@ export default function HomePage() {
           TESTIMONIALS — ICON AVATARS
       ===================================================== */}
 
-      <section
-        id="what-clients-say"
-        className="scroll-mt-24 overflow-hidden bg-[#F2F2F2] py-20 md:py-28 lg:py-32"
-      >
-        <div className="mx-auto max-w-[1320px] px-5 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="self-start lg:sticky lg:top-32 lg:col-span-4">
-              <WordReveal
-                text="What clients say."
-                as="h2"
-                stagger={0.08}
-                highlight={["clients"]}
-                className="mb-6 flex flex-wrap font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.05] text-black"
-              />
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="mb-8 max-w-sm text-base leading-relaxed text-[#4A4A47]"
-              >
-                Three partners. Three different briefs. One common thread: work
-                that holds up on the ground.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-                className="hidden items-center gap-3 text-xs uppercase tracking-[0.2em] text-[#4A4A47] lg:flex"
-              >
-                <span>Scroll</span>
-
-                <motion.span
-                  aria-hidden="true"
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{
-                    duration: 1.6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="inline-block text-base leading-none text-[#E50069]"
-                >
-                  ↓
-                </motion.span>
-              </motion.div>
-            </div>
-
-            <div className="flex flex-col gap-12 md:gap-16 lg:col-span-8 lg:gap-24">
-              {testimonials.map((test, index) => {
-                const isOdd = index % 2 === 1;
-                const numeral = String(index + 1).padStart(2, "0");
-
-                return (
-                  <motion.article
-                    key={`${test.name}-${index}`}
-                    initial={{
-                      opacity: 0,
-                      y: 60,
-                      rotate: 0,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      y: 0,
-                      rotate: isOdd ? 1.2 : -1.4,
-                    }}
-                    viewport={{
-                      once: true,
-                      amount: 0.35,
-                    }}
-                    transition={{
-                      duration: 0.75,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className={`group relative max-w-xl border border-[#E5E2DA] bg-white p-7 transition-shadow duration-500 hover:shadow-[0_30px_80px_-30px_#E50069] md:p-10 ${
-                      isOdd ? "lg:ml-auto lg:mr-2" : "lg:ml-2"
-                    }`}
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute -top-4 right-5 select-none font-serif text-[5rem] font-black leading-none md:-top-6 md:right-7 md:text-[6rem]"
-                      style={{
-                        color: "transparent",
-                        WebkitTextStroke: "1.5px #E50069",
-                      }}
-                    >
-                      {numeral}
-                    </span>
-
-                    <motion.h3
-                      initial={{ opacity: 0, y: 12 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.35 }}
-                      transition={{
-                        delay: 0.2,
-                        duration: 0.5,
-                      }}
-                      className="mb-2 max-w-[80%] font-serif text-3xl leading-[1.05] text-black md:text-4xl"
-                    >
-                      {test.name}
-                    </motion.h3>
-
-                    <p className="mb-6 text-xs uppercase tracking-[0.18em] text-[#4A4A47]">
-                      {test.role} · {test.location}
-                    </p>
-
-                    <BwanjiMark
-                      className="-ml-0.5 mb-3 h-14 w-14 select-none md:h-16 md:w-16"
-                      strokeWidth={5}
-                    />
-
-                    <p className="mb-8 font-serif text-base italic leading-relaxed text-black md:text-lg">
-                      {test.quote}
-                    </p>
-
-                    <div className="flex flex-wrap items-end justify-between gap-5 border-t border-[#E5E2DA] pt-6">
-                      <div className="flex items-center gap-4">
-                        {/* Replaces broken avatar image */}
-                        <div
-                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E50069] text-white"
-                          aria-hidden="true"
-                        >
-                          <UserRound className="h-6 w-6" strokeWidth={1.8} />
-                        </div>
-
-                        <div>
-                          <p className="text-2xl font-bold leading-none text-[#E50069]">
-                            {test.statNumber}
-                          </p>
-
-                          <p className="mt-1 text-[10px] uppercase tracking-widest text-[#4A4A47]">
-                            {test.statLabel}
-                          </p>
-                        </div>
-                      </div>
-
-                      {test.link && (
-                        <Link
-                          to={test.link}
-                          data-testid={`testimonial-link-${index}`}
-                          className="group/link inline-flex items-center gap-1 text-sm font-medium text-black underline-offset-4 hover:underline"
-                        >
-                          See the work
-                          <span
-                            aria-hidden="true"
-                            className="inline-block transition-transform duration-300 group-hover/link:translate-x-1"
-                          >
-                            &rarr;
-                          </span>
-                        </Link>
-                      )}
-                    </div>
-                  </motion.article>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialsCarousel />
 
       {/* =====================================================
           GROUND REPORT
